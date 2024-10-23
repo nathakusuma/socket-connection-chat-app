@@ -1,9 +1,11 @@
+import os
 import socket
 import threading
+from dotenv import load_dotenv
 
 
 class ChatServer:
-    def __init__(self, host='localhost', port=2323):
+    def __init__(self, host, port):
         self.host = host
         self.port = port
         self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -72,5 +74,9 @@ class ChatServer:
 
 # Run server
 if __name__ == "__main__":
-    server = ChatServer()
+    load_dotenv()
+    ip = str(os.getenv('SERVER_IP'))
+    port = int(os.getenv('SERVER_PORT'))
+    print(f"IP: {ip}, PORT: {port}")
+    server = ChatServer(ip, port)
     server.start()

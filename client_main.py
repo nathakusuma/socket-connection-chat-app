@@ -1,9 +1,11 @@
+import os
 import socket
 import threading
 import sys
+from dotenv import load_dotenv
 
 class ChatClient:
-    def __init__(self, host='10.200.71.72', port=2323):
+    def __init__(self, host, port):
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.is_connected = False
         try:
@@ -77,5 +79,9 @@ class ChatClient:
 
 # Run client
 if __name__ == "__main__":
-    client = ChatClient()
+    load_dotenv()
+    ip = str(os.getenv('SERVER_IP'))
+    port = int(os.getenv('SERVER_PORT'))
+    print(f"IP: {ip}, PORT: {port}")
+    client = ChatClient(ip, port)
     client.start()
