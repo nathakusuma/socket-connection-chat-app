@@ -21,7 +21,7 @@ class ChatServer:
                 except:
                     self.remove_client(client)
 
-    def handle_client(self, client_socket):
+    def handle_client(self, client_socket, client_address):
         """Handle individual client connection"""
         # Request and store client name
         client_socket.send("Enter your name: ".encode())
