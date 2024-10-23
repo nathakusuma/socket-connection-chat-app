@@ -10,7 +10,7 @@ import socket
 
 def client_program():
     client_socket = socket.socket()  
-    client_socket.connect(('172.19.0.217', 2323))  
+    client_socket.connect(('localhost', 2323))
     
     message = input("Enter message: ")  
     
