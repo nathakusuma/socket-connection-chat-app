@@ -2,9 +2,8 @@ import socket
 import threading
 import sys
 
-
 class ChatClient:
-    def __init__(self, host='localhost', port=2323):
+    def __init__(self, host='10.200.71.72', port=2323):
         self.socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.is_connected = False
         try:
