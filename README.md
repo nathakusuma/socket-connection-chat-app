@@ -69,11 +69,9 @@ socket-connection-chat-app/
 ├── server_main.py      # Server implementation
 ├── client_main.py      # Client implementation
 ├── requirements.txt    # Project dependencies
+├── .gitignore          # List of ignored files and directories
 ├── .env                # Environment variables
-├── .example.env        # Example of environment variables
-└── original_code/      # Original reference code
-    ├── server.py
-    └── client.py
+└── .env.example        # Example of environment variables
 ```
 
 ## Features Details
